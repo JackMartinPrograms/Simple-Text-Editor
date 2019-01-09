@@ -1,0 +1,11 @@
+Version 1.0
+- First Release!
+
+Version 1.1
+- Added 'Settings' To The File Menu
+- Added Font Color Changing (In The Settings)
+- Added Font Changing (In The Settings)
+- Added Font Size Changing (In The Settings)
+- Added Line Number And Column To Bottom Bar
+- Added Version Number To Bottom Bar
+- Added 'Delete' To The Edit Menu
