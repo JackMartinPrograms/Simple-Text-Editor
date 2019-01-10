@@ -9,23 +9,36 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
+import me.JackMartin.TextEditor.Main;
+
 public class Utils {
-	
-	public static void setFont(Font font, JTextArea textArea) {
-		textArea.setFont(font);
-	}
-	
-	public static void setForegroundColor(Color color, JTextArea textArea) {
-		textArea.setForeground(color);
-	}
-	
-	public static void setBackgroundColor(Color color, JTextArea textArea) {
-		textArea.setBackground(color);
+
+	public static void find(String text) {
+		if (Main.getTextArea().getText().contains(text)) {
+			int wordPosition = Main.getTextArea().getText().indexOf(text);
+			Main.getTextArea().setCaretPosition(wordPosition);
+		} else {
+			JOptionPane.showMessageDialog(null, "Could Not Find '" + text + "'", "Could Not Find",
+					JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 
-	public static void readInTextFile(String path, JTextArea textArea) {
+	public static void setFont(Font font) {
+		Main.getTextArea().setFont(font);
+	}
+
+	public static void setForegroundColor(Color color) {
+		Main.getTextArea().setForeground(color);
+	}
+
+	public static void setBackgroundColor(Color color) {
+		Main.getTextArea().setBackground(color);
+	}
+
+	public static void readInTextFile(String path) {
 		String line = null;
 
 		try {
@@ -33,7 +46,7 @@ public class Utils {
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 			while ((line = bufferedReader.readLine()) != null) {
-				textArea.append(line + System.getProperty("line.separator"));
+				Main.getTextArea().append(line + System.getProperty("line.separator"));
 			}
 
 			bufferedReader.close();
@@ -43,13 +56,12 @@ public class Utils {
 			System.out.println("Error reading file '" + path + "'");
 		}
 	}
-	
-	public static void saveToFile(String path, JTextArea textArea) {		
+
+	public static void saveToFile(String path, JTextArea textArea) {
 		try (BufferedWriter fileOut = new BufferedWriter(new FileWriter(path))) {
 			textArea.write(fileOut);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 }

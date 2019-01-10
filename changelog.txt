@@ -1,6 +1,3 @@
-Version 1.0
-- First Release!
-
 Version 1.1
 - Added 'Settings' To The File Menu
 - Added Font Color Changing (In The Settings)
@@ -9,3 +6,30 @@ Version 1.1
 - Added Line Number And Column To Bottom Bar
 - Added Version Number To Bottom Bar
 - Added 'Delete' To The Edit Menu
+
+Version 1.2
+- Added Icons For Following Menu Items:
+  File Menu:
+    - New
+    - Open
+    - Save
+    - Settings
+    - Quit
+  Edit Menu:
+    - Cut
+    - Copy
+    - Paste
+    - Select All
+    - Delete
+- Added RGB Color Support For Background In Settings
+- Added RGB Color Support For Font Color In Settings
+- Added 'Search' Menu
+- Fixed The Background Title In Settings Saying 'Font' Instead Of 'Background'
+- Added File Path To Title Bar When You Save Or Open A File
+- Added 'Find' To The Search Menu
+- Added The Following Keyboard Shortcuts:
+  - Ctrl + A - Select All
+  - Ctrl + C - Copy
+  - Ctrl + V - Paste
+  - Ctrl + W - Quit Program
+  - Ctrl + F - Find
